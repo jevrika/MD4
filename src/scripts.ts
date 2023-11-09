@@ -1,9 +1,10 @@
+/* eslint-disable object-curly-newline */
 //  Task 1
 //  Write a function that takes two numbers (a and b) as argument
 //  Sum a and b
 //  Return the result
 
-import { testResultsProcessor } from "../jest.config";
+import { testResultsProcessor } from '../jest.config';
 
 const add = (a: number, b: number): number => a + b;
 
@@ -17,12 +18,12 @@ console.log(add(99, 1)); // 100
 
 const typeOfValue = (value: number | string | boolean | object | []): unknown => typeof value;
 
-console.log(typeOfValue(2)); // number
-console.log(typeOfValue(true)); // boolean
-console.log(typeOfValue({ name: 'Ērika', city: 'Liepāja' })); // obejct
-console.log(typeOfValue(null)); // obejct
-console.log(typeOfValue('Hello')); // string
-console.log(typeOfValue([1, 2, 3, 4])); // object
+console.log(typeOfValue(1)); // number
+console.log(typeOfValue(false)); // boolean
+console.log(typeOfValue({})); // object
+console.log(typeOfValue(null)); // object
+console.log(typeOfValue('string')); // string
+console.log(typeOfValue(['array'])); // object
 
 // Task 3
 // Write a function that takes two values, say a and b, as arguments
@@ -543,7 +544,8 @@ console.log(mergeAndSortArrays([-10, 22, 333, 42], [-11, 5, 22, 41, 42])); // [ 
 // Write a function that takes an array (a) and a number (b) as arguments
 // Sum up all array elements with a value greater than b
 
-const sumArrayElementsGreaterThanB = (arr: number[], b: number): number => arr.reduce((sum, cur) => {
+const sumArrayElementsGreaterThanB = (arr: number[], b: number):
+ number => arr.reduce((sum, cur) => {
   if (cur > b) {
     return sum + cur;
   }
@@ -604,7 +606,8 @@ console.log(groupStringsByFirstLetter(['Berlin', 'Paris', 'Prague'])); // { b: [
 // or zero if the number is smaller than 6
 // The other elements should be the elements of the original array
 
-const createNewArrayWithNumber = (arr: (number | string | boolean)[], n: number): (number | string | boolean)[] => {
+const createNewArrayWithNumber = (arr: (number | string | boolean)[], n: number):
+ (number | string | boolean)[] => {
   if (n >= 6) {
     return [n, ...arr];
   }
@@ -619,7 +622,8 @@ console.log(createNewArrayWithNumber([null, false], 11)); // [11,null,false]
 // Write a function that takes an array (a) and a value (n) as arguments
 // Save every nth element in a new array
 
-const saveEveryNthElement = (arr: number[], n: number): number[] => arr.filter((element, i) => i % n === n - 1);
+const saveEveryNthElement = (arr: number[], n: number):
+ number[] => arr.filter((element, i) => i % n === n - 1);
 
 console.log(saveEveryNthElement([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)); // [3,6,9]
 console.log(saveEveryNthElement([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 5)); // [6,1]
@@ -629,7 +633,8 @@ console.log(saveEveryNthElement([7, 2, 1, 6, 3, 4, 5, 8, 9, 10], 2)); // [2,6,4,
 // Write a function that takes an object with two properties as argument
 // It should return the value of the property with key country
 
-const getCountryPropertyValue = (obj: { continent: string; country: string }): string => obj.country;
+const getCountryPropertyValue = (obj: { continent: string; country: string }):
+string => obj.country;
 
 console.log(getCountryPropertyValue({ continent: 'Asia', country: 'Japan' })); // 'Japan'
 console.log(getCountryPropertyValue({ country: 'Sweden', continent: 'Europe' })); // 'Sweden'
@@ -717,7 +722,7 @@ const getObjectKeys = (obj: { [key: string]: string | number }):(string | number
 };
 
 console.log(getObjectKeys({ a: 1, b: 2, c: 3 })); // ['a','b','c']
-console.log(getObjectKeys({j: 9, i: 2, x: 3, z: 4})); // ['j','i','x','z']
+console.log(getObjectKeys({ j: 9, i: 2, x: 3, z: 4 })); // ['j','i','x','z']
 console.log(getObjectKeys({ w: 15, x: 22, y: 13 })); // ['w','x','y']
 
 // Task 54
@@ -756,7 +761,7 @@ const cloneObjectWithoutB = (obj : {[key: string]: number}): object => {
 
 console.log(cloneObjectWithoutB({ a: 1, b: 7, c: 3 })); // { a: 1, c: 3 }
 console.log(cloneObjectWithoutB({ b: 0, a: 7, d: 8 })); // { a: 7, d: 8 }
-console.log(cloneObjectWithoutB({e: 6, f: 4, b: 5, a: 3})); // { e: 6, f: 4, a: 3 }
+console.log(cloneObjectWithoutB({e: 6, f: 4, b: 5, a: 3 })); // { e: 6, f: 4, a: 3 }
 
 // Task 56
 // Write a function that takes two objects as arguments
@@ -796,9 +801,9 @@ const multiplyValuesByNumber = (obj: {[key: string]:number}, num:number): object
   return result;
 };
 
-console.log(multiplyValuesByNumber({a: 1, b: 2, c: 3 }, 3)); // {a:3,b:6,c:9}
-console.log(multiplyValuesByNumber({j: 9, i: 2, x: 3, z: 4 }, 10)); // {j:90,i:20,x:30,z:40}
-console.log(multiplyValuesByNumber({w: 15, x: 22, y: 13}, 6)); // {w:90,x:132,y:78}
+console.log(multiplyValuesByNumber({ a: 1, b: 2, c: 3 }, 3)); // {a:3,b:6,c:9}
+console.log(multiplyValuesByNumber({ j: 9, i: 2, x: 3, z: 4 }, 10)); // {j:90,i:20,x:30,z:40}
+console.log(multiplyValuesByNumber({ w: 15, x: 22, y: 13 }, 6)); // {w:90,x:132,y:78}
 
 // Task 58
 // Write a function that takes an object as argument
@@ -811,7 +816,7 @@ const swapKeyValues = (obj: {[key: string | number]:string | number}): object =>
     if (Object.prototype.hasOwnProperty.call(obj, key)) {
       swappedObj[obj[key]] = key;
     }
-  };
+  }
   return swappedObj;
 };
 
@@ -872,10 +877,10 @@ const ExtractPersonalInfo = (person:
   return result;
 };
 
-console.log(ExtractPersonalInfo({fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67})); // {fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
-console.log(ExtractPersonalInfo({fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102})); // {fn: 'Martin', ln: 'Harper', weight: '102kg'}
-console.log(ExtractPersonalInfo({fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71})); // {fn: 'Andrew', ln: 'Harper', size: '175cm', weight: '71kg'}
-console.log(ExtractPersonalInfo({fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de'})); // {fn: 'Matthew', ln: 'Müller'}
+console.log(ExtractPersonalInfo({ fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67 })); // {fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
+console.log(ExtractPersonalInfo({ fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102 })); // {fn: 'Martin', ln: 'Harper', weight: '102kg'}
+console.log(ExtractPersonalInfo({ fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71 })); // {fn: 'Andrew', ln: 'Harper', size: '175cm', weight: '71kg'}
+console.log(ExtractPersonalInfo({ fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de' })); // {fn: 'Matthew', ln: 'Müller'}
 
 // Task 61
 // Write a function that takes an array of objects and a string as arguments
@@ -883,12 +888,12 @@ console.log(ExtractPersonalInfo({fn: 'Matthew', ln: 'Müller', age: 19, email: '
 // Return the new array of objects
 
 const addContinentToObjects = (arr: Array<{ [key: string]: string }>, continent: string):
-object => arr.map((obj) => ({...obj, continent}))
+object => arr.map((obj) => ({ ...obj, continent }));
 
 console.log(addContinentToObjects([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia'));
 // [{ city: 'Tokyo', country: 'Japan', continent: 'Asia' },
 // { city: 'Bangkok', country: 'Thailand', continent: 'Asia' }]
-console.log(addContinentToObjects([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Paris', country: 'France' }], 'Europe')); 
+console.log(addContinentToObjects([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Paris', country: 'France' }], 'Europe'));
 // [{ city: 'Stockholm', country: 'Sweden', continent: 'Europe' },
 // { city: 'Paris', country: 'France', continent: 'Europe' }]
 
@@ -898,14 +903,14 @@ console.log(addContinentToObjects([{ city: 'Stockholm', country: 'Sweden' }, { c
 // It should have a key for each unique value of the array
 // The corresponding object value should be the number of times the key occurs within the array
 
-const arrayToCountObject = (arr: number[]) : object {
-  const countObject: {[key: number]:number }= {};
+const arrayToCountObject = (arr: number[]) : object => {
+  const countObject: {[key: number]:number } = {};
 
   arr.forEach((num) => {
-    countObject[num] = (countObject[num] || 0) + 1
-  })
- return countObject
-}
+    countObject[num] = (countObject[num] || 0) + 1;
+  });
+  return countObject;
+};
 
 console.log(arrayToCountObject([1, 2, 2, 3])); // {1:1,2:2,3:1}
 console.log(arrayToCountObject([9, 9, 9, 99])); // {9:3,99:1}
@@ -916,9 +921,8 @@ console.log(arrayToCountObject([4, 3, 2, 1])); // {1:1,2:1,3:1,4:1}
 // It should return true if the dates are equal
 // It should return false otherwise
 
-const areDatesEqual = (firstDate: Date, secondDate: Date): boolean => {
-  return firstDate.getTime() === secondDate.getTime();
-}
+const areDatesEqual = (firstDate: Date, secondDate: Date):
+ boolean => firstDate.getTime() === secondDate.getTime();
 
 console.log(areDatesEqual(new Date('2000/01/01 08:00:00'), new Date('2000/01/01 08:45:00'))); // false
 console.log(areDatesEqual(new Date('2000/01/01 08:00:00'), new Date('2000/01/01 08:00:00'))); // true
@@ -928,11 +932,11 @@ console.log(areDatesEqual(new Date('2001/01/01 08:00:00'), new Date('2000/01/01 
 // Write a function that takes two date instances as argument
 // It should return the number of days that lies between those dates
 
-const datesBetweenDates = (firstDate: Date, secondDate: Date): number =>{
-const differenceBetween = secondDate.getTime() - firstDate.getTime();
-const differenceBetweenInDays = differenceBetween / (1000 * 3600 * 24)
-return differenceBetweenInDays
-}
+const datesBetweenDates = (firstDate: Date, secondDate: Date): number => {
+  const differenceBetween = secondDate.getTime() - firstDate.getTime();
+  const differenceBetweenInDays = differenceBetween / (1000 * 3600 * 24);
+  return differenceBetweenInDays;
+};
 
 console.log(datesBetweenDates(new Date('2020-06-01'), new Date('2020-06-11'))); // 10
 console.log(datesBetweenDates(new Date('2000-01-01'), new Date('2020-06-01'))); // 7457
@@ -942,11 +946,10 @@ console.log(datesBetweenDates(new Date('2000-01-01'), new Date('2020-06-01'))); 
 // It should return true if they fall on the exact same day
 // It should return false otherwise
 
-const areDatesOnSameDay  = (firstDate: Date, secondDate: Date): boolean => {
-  return firstDate.getTime() === secondDate.getTime();
-}
+const areDatesOnSameDay = (firstDate: Date, secondDate: Date):
+ boolean => firstDate.getTime() === secondDate.getTime();
 
-console.log(areDatesOnSameDay (new Date('2000/01/01'), new Date('2000/01/01'))); // true
-console.log(areDatesOnSameDay (new Date('2000/01/01'), new Date('2000/01/02'))); // false
-console.log(areDatesOnSameDay (new Date('2001/01/01'), new Date('2000/01/01'))); // false
-console.log(areDatesOnSameDay (new Date('2000/11/01'), new Date('2000/01/01'))); // false
+console.log(areDatesOnSameDay(new Date('2000/01/01'), new Date('2000/01/01'))); // true
+console.log(areDatesOnSameDay(new Date('2000/01/01'), new Date('2000/01/02'))); // false
+console.log(areDatesOnSameDay(new Date('2001/01/01'), new Date('2000/01/01'))); // false
+console.log(areDatesOnSameDay(new Date('2000/11/01'), new Date('2000/01/01'))); // false
